@@ -1,0 +1,14 @@
+.btns_div{
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+          
+}
+.btns_div button{
+            color: white;
+            font-weight: 700;
+            width: 80%;
+                border-radius: 20px;
+                border: transparent;
+                    padding: 5px 10px;
+}

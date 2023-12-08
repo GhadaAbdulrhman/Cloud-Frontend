@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@font-face {
+    /* src: url(/fonts/OpenSans.ttf) format('opentype'); */
+    /* font-family: 'openSans'; */
+
+  }
+
+body {
+  margin: 0;
+  /* font-family:openSans ; */
+  background:#F7F3F5;
+  font-family: 'Roboto, sans-serif';
+  font-weight:bold !important
+}
+* {
+  outline:none!important;
+}
+
+div,p,h1,h2,h3,h4,h5,h6 {
+  margin:0;
+  padding:0;
+  
+}
+
+.cart .list-group .list-group-item {
+  background: transparent;
+}
