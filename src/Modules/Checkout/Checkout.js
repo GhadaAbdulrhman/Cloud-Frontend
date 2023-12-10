@@ -23,9 +23,7 @@ const Checkout = () => {
         <Col className='mb-3' xs={12} md={4}>
           <CartCheckout />
         </Col>
-        <Col className='mb-3' xs={12} md={8}>
-          <CheckoutPaymentMethod />
-        </Col>
+       
       </Row>
     </Container>
 

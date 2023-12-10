@@ -41,14 +41,14 @@ const Product = (props) => {
   const setColor = (e) => {
     setProd((prevProd) => ({
       ...prevProd,
-      color: e.target.name,
+      color: e.target.name || "",
     }));
   };
 
   const setText = (text) => {
     setProd((prevProd) => ({
       ...prevProd,
-      text,
+      text: text || "",
     }));
   };
 
@@ -57,7 +57,7 @@ const Product = (props) => {
       ...prevProd,
       graphics: {
         src: graphic.src,
-        alt: graphic.alt,
+        alt: graphic.alt  || "",
         width: graphic.width,
         height: graphic.height,
       },

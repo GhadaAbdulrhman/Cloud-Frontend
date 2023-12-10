@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import clsx from 'clsx';
+import axios from "axios";
 import ButtonBlock from 'Components/Buttons/ButtonBlock';
 import { Link } from 'react-router-dom';
 import Url from 'Paths';
@@ -10,6 +11,21 @@ import useStore from 'Store/StoreContext';
 const CheckoutSummary = () => {
   const classes = useStyles();
     const { subTotal } = useStore();
+
+    const handleCheckout = async () => {
+      try {
+        const response = await axios.post(`${process.env.REACT_APP_SERVER_ENDPOINT}/paypal/pay`, {
+          amount: subTotal, 
+          description: 'Payment for products',
+        });
+  
+        console.log(response);
+        window.location.href = response.data.redirectUrl;
+        
+      } catch (error) {
+        console.error('Error initiating payment:', error);
+      }
+    };
 
   return (
     <div
@@ -33,7 +49,7 @@ const CheckoutSummary = () => {
         </h6>
       </div>
       <div className="mt-3">
-        <ButtonBlock as={Link} to={Url.Checkout} text="Checkout" />
+         <ButtonBlock onClick={handleCheckout} text="Checkout" />
       </div>
     </div>
   );
