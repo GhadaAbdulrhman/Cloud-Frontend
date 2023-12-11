@@ -25,7 +25,7 @@ const HomePageBanner = () => {
   return (
     <div className={classes.banner}>
       <img
-        src={`${process.env.PUBLIC_URL}/images/homepage/banner.png`}
+        src={`/images/homepage/Banner.png`}
         alt=""
       />
       <div
